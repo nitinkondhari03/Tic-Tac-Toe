@@ -68,7 +68,7 @@ const handleNewGame=()=>{
   return (
       <>
        {startplayer ? <div>
-      <h4 className='chooseplayers'>Choose Player First start Games</h4>
+      <h4 className='chooseplayers'>Choose Player First Start Games</h4>
       <button type='button' className='playersxo' onClick={handleX}>X</button>
       <button  type='button'  className='playersxo' onClick={handleO}>O</button>
       </div>:
