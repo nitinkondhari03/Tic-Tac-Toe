@@ -1,12 +1,92 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.threeD {
+  color: rgb(236, 233, 233);
+  white-space: nowrap;
+  transform: translate(0%,0%);
+  font-size: 4rem;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  transition: 0.3s;
+  font-weight: bolder;
+  text-shadow: 1px 1px 0 grey, 1px 2px 0 grey, 1px 3px 0 grey, 1px 4px 0 grey,
+    1px 5px 0 grey, 1px 6px 0 grey, 1px 7px 0 grey, 1px 8px 0 grey;
 }
 
+.threeD:hover {
+  transition: 0.3s;
+  text-shadow: 1px -1px 0 grey, 1px -2px 0 grey, 1px -3px 0 grey,
+    1px -4px 0 grey, 1px -5px 0 grey, 1px -6px 0 grey, 1px -7px 0 grey,
+    1px -8px 0 grey, 5px -13px 15px black, 5px -13px 25px #808080;
+}
+.text {
+  text-transform: uppercase;
+  font-family: verdana;
+  font-size: 3em;
+  font-weight: 700;
+  color: #ececec;
+  text-shadow: 1px 1px 1px black,
+      1px 2px 1px black,
+      1px 3px 1px black,
+      1px 4px 1px black,
+      1px 5px 1px black,
+      1px 6px 1px black,
+      1px 7px 1px black,
+      1px 8px 1px black,
+      1px 9px 1px black,
+      1px 10px 1px black,
+  1px 18px 6px rgba(177, 169, 169, 0.4),
+  1px 22px 10px rgba(142, 114, 114, 0.2),
+  1px 25px 15px rgba(158, 146, 146, 0.2),
+  1px 30px 10px rgba(172, 161, 161, 0.4);
+}
+.pushable {
+  background: hsl(340deg 100% 32%);
+  border: none;
+  border-radius: 12px;
+  padding: 0;
+  cursor: pointer;
+}
+.front {
+  display: block;
+  padding: 12px 42px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  background: hsl(345deg 100% 47%);
+  color: white;
+  transform: translateY(-4px);
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
+}
+
+.pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+.chooseplayers{
+  color: rgb(51, 12, 106);
+	font-size: 2em ;  
+	font-weight: 900;
+	text-shadow: 
+		-0.0075em 0.0075em 0 mix(#fff, #e91e63, 94%),
+		0.005em 0.005em 0 mix(#fff, #e91e63, 60%),
+		0.01em 0.01em 0 mix(#fff, #e91e63, 62%), 
+		0.015em 0.015em mix(#fff, #e91e63, 64%), 
+		0.02em 0.02em 0 mix(#fff, #e91e63, 66%), 
+		0.025em 0.025em 0 mix(#fff, #e91e63, 68%),
+		0.03em 0.03em 0 mix(#fff, #e91e63, 70%),
+		0.035em 0.035em 0 mix(#fff, #e91e63, 72%);
+}
+.playersxo{
+  height: 25vh;
+  width: 25vh;
+  font-size: 5em;
+  background-color: #e91e63;
+  color: white;
+  font-weight: bolder;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

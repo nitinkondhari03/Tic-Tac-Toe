@@ -6,7 +6,7 @@ import TicTacToe from './Components/TicTacToe';
 function App() {
   return (
     <div className="App">
-      <h1>  <h1>Tic Tac Toe Game</h1></h1>
+      <h1><h1 className="threeD">Tic Tac Toe Game</h1></h1>
       <TicTacToe/>
     </div>
   );

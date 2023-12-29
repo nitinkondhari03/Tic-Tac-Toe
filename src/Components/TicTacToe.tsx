@@ -6,6 +6,7 @@ const TicTacToe = () => {
       const [cureentPlayer,setCurrentPlayer]=useState("X")
       const [winner,setWinner]=useState(null)
       const [isDrawMatch,setIsDrawMatch]=useState(false)
+      const [startplayer,setstartplayer]=useState(true)
       console.log(value,"value")
       const checkWinner=()=>{
             const winIndexs=[
@@ -41,37 +42,51 @@ const TicTacToe = () => {
       useEffect(()=>{
             const newWinner=checkWinner()
             if(newWinner){
+                 setTimeout(()=>{
                   setWinner(newWinner)
+                 },1000)
             }else if(isboardfull()){
-            setIsDrawMatch(true)
+                  setTimeout(()=>{
+                        setIsDrawMatch(true)
+                  },1000)
             }
       })
       const handleX=()=>{
    setCurrentPlayer("X")
+   setstartplayer(false)
       }
       const handleO=()=>{
             setCurrentPlayer("O")
+            setstartplayer(false)
       }
 const handleNewGame=()=>{
       setValue(Array(9).fill(null))
       setWinner(null)
       setIsDrawMatch(false)
+      setstartplayer(true)
 }
   return (
+      <>
+       {startplayer ? <div>
+      <h4 className='chooseplayers'>Choose Player First start Games</h4>
+      <button type='button' className='playersxo' onClick={handleX}>X</button>
+      <button  type='button'  className='playersxo' onClick={handleO}>O</button>
+      </div>:
+      
     <div>
-      <Board  onClick={handleclick} value={value}/>
-      {winner ? <h1>Winner:{winner}</h1>: isDrawMatch ?
-      <h1>Draw Match</h1> : <h1>Player :{cureentPlayer}</h1>}
+      {winner ? <h1 >Winner Is Player {winner}</h1>: isDrawMatch ?
+      <h1>Draw Match</h1> : <div><Board  onClick={handleclick} value={value}/>
+      <h1 className="text">Player: {cureentPlayer}</h1>
+      </div>}
+    
       <div>
-            <h4>Choose Player First start Games</h4>
-      <button type='button' onClick={handleX}>X</button>
-      <button  type='button'  onClick={handleO}>O</button>
+            <button className="pushable"  type='button'
+            onClick={handleNewGame}>
+                  <span className="front">Start New Games</span>
+            </button>
       </div>
-      <div>
-            <button type='button'
-            onClick={handleNewGame}>Start New Games</button>
-      </div>
-    </div>
+    </div>}
+    </>
   )
 }
 
