@@ -7,7 +7,7 @@ const TicTacToe = () => {
       const [winner,setWinner]=useState(null)
       const [isDrawMatch,setIsDrawMatch]=useState(false)
       const [startplayer,setstartplayer]=useState(true)
-      console.log(value,"value")
+
       const checkWinner=()=>{
             const winIndexs=[
                   [0,1,2],
